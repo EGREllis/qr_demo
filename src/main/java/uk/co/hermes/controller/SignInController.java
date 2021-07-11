@@ -10,23 +10,13 @@ import uk.co.hermes.dao.DatabaseDao;
 import java.util.Map;
 
 @Controller
-public class IndexController {
+public class SignInController {
     @Autowired
     private DatabaseDao databaseDao;
 
     @GetMapping("/")
     public String index() {
         return "sign_in";
-    }
-
-    @GetMapping("/register")
-    public String register() {
-        return "register";
-    }
-
-    @PostMapping("/register")
-    public String processRegister() {
-        return "welcome";
     }
 
     @GetMapping("/sign_in")

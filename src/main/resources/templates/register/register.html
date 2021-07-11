@@ -1,14 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
     <head>
         <title>Registration page</title>
     </head>
     <body>
         <form method="POST" action="register">
-            <input type="email" name="email" />
-            <input type="password" name="password" />
-            <input type="password" name="confirm" />
+            <input type="email" name="email" placeholder="E-mail" />
+            <input type="password" name="password" placeholder="Password" />
+            <input type="password" name="confirm" placeholder="Confirm password" />
             <input type="submit" value="Register" />
             <input type="reset" value="Clear" />
         </form>
+        <p th:text="${emailError}"></p>
+        <p th:text="${passwordError}"></p>
+        <p th:text="${confirmError}"></p>
     </body>
 </html>
