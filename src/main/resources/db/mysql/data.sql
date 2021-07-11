@@ -10,3 +10,12 @@ INSERT INTO offers (
     'GBP'
 );
 
+INSERT INTO accounts (
+    id,
+    email,
+    password
+) VALUES (
+    1,
+    "root@localhost",
+    "root"
+)
