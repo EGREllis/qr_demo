@@ -1,6 +1,7 @@
 -- Tables
 DROP TABLE IF EXISTS offers;
 DROP TABLE IF EXISTS accounts;
+DROP TABLE IF EXISTS purchases;
 
 -- Tables
 CREATE TABLE offers (
@@ -14,5 +15,13 @@ CREATE TABLE accounts (
     id INT PRIMARY KEY,
     email VARCHAR(30),
     password VARCHAR(30)
+);
+
+CREATE TABLE purchases (
+    id INT PRIMARY KEY,
+    account_id INT,
+    offer_id INT,
+    refunds_id INT,
+    refunded_by_id INT
 );
 

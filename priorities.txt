@@ -1,0 +1,30 @@
+[DONE 2021/07/11]   Sign in and register minimally functional
+
+Scan QR Code of product -> URL  -> Sign up (if not registered, alternatively renew cookie/confirm below)
+                                -> Purchase confirmation screen  -> Purchase                         -> Payment
+                                                                                                    -> Refund
+                                                                -> Scan another to add to basket
+                                                                -> Remove an item
+                                                                -> Clear basket
+Sign in -> Modify/confirm details
+        -> List transactions
+        -> Reproduce QR codes with referral id?
+
+Second application/webapp to manage entries/records
+Own e-currency?
+
+Goals:
+Research and implement authentication cookies
+Research and implement cookie/session based security (DB backed data)
+Research and implement shopping cart (DB backed data)
+Research and implement pricing of shopping card (offers, etc.).
+Provider(Retailer),Product(product to purchase),Price(Listed item price),Referral(pyramid scheme)
+
+
+Use cases:
+1) Unregistered user visits site    -> Explanation, invitation to register
+2) Registered user visits site      -> Review settings/purchases
+3) Registered user visits instant purchase QR code  -> Summary of QR code/purchase
+4) Registered user visits shopping cart QR code     -> Add item to the cart for that provider
+                                                    -> Remove item from cart
+                                                    ->

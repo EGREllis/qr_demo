@@ -5,10 +5,14 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 import uk.co.hermes.dao.mapper.AccountRowMapper;
 import uk.co.hermes.dao.mapper.IntegerRowMapper;
+import uk.co.hermes.dao.mapper.OfferRowMapper;
 import uk.co.hermes.domain.Account;
 import uk.co.hermes.domain.Identifiable;
+import uk.co.hermes.domain.Offer;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @Component
 public class DatabaseDao {
@@ -30,6 +34,14 @@ public class DatabaseDao {
             }
         }
         return maxInt+1;
+    }
+
+    public static <T extends Identifiable> Map<Integer, T> mapOf(List<T> ids) {
+        Map<Integer, T> map = new HashMap<>();
+        for (T id : ids) {
+            map.put(id.getId(), id);
+        }
+        return map;
     }
 
     public List<Account> allAccounts() {
@@ -59,5 +71,19 @@ public class DatabaseDao {
         } else {
             return results.get(0);
         }
+    }
+
+    public List<Offer> allOffers() {
+        String select = "SELECT id, product, price, currency FROM offers";
+        return template.query(select, new OfferRowMapper());
+    }
+
+    public Offer getOfferById(int id) {
+        String select = String.format("SELECT id, product, price, currency FROM offers WHERE id = %1$d", id);
+        List<Offer> results = template.query(select, new OfferRowMapper());
+        if (results.size() != 1) {
+            throw new IllegalStateException(String.format("Could not find a record in the offer table with id %1$d", id));
+        }
+        return results.get(0);
     }
 }
