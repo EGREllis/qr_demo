@@ -1,4 +1,6 @@
 [DONE 2021/07/11]   Sign in and register minimally functional
+[DONE 2021/07/12]   Offers and purchases can be listed
+[DONE 2021/07/12]   Providers can be listed
 
 Scan QR Code of product -> URL  -> Sign up (if not registered, alternatively renew cookie/confirm below)
                                 -> Purchase confirmation screen  -> Purchase                         -> Payment
@@ -19,7 +21,6 @@ Research and implement cookie/session based security (DB backed data)
 Research and implement shopping cart (DB backed data)
 Research and implement pricing of shopping card (offers, etc.).
 Provider(Retailer),Product(product to purchase),Price(Listed item price),Referral(pyramid scheme)
-
 
 Use cases:
 1) Unregistered user visits site    -> Explanation, invitation to register

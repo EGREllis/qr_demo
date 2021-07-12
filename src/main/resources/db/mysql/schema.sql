@@ -2,6 +2,8 @@
 DROP TABLE IF EXISTS offers;
 DROP TABLE IF EXISTS accounts;
 DROP TABLE IF EXISTS purchases;
+DROP TABLE IF EXISTS providers;
+DROP TABLE IF EXISTS carts;
 
 -- Tables
 CREATE TABLE offers (
@@ -25,3 +27,14 @@ CREATE TABLE purchases (
     refunded_by_id INT
 );
 
+CREATE TABLE providers (
+    id INT PRIMARY KEY,
+    name VARCHAR(30)
+);
+
+CREATE TABLE carts (
+    account_id INT,
+    provider_id INT,
+    offer_id INT,
+    quantity INT
+);

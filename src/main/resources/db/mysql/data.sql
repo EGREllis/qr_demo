@@ -18,5 +18,12 @@ INSERT INTO accounts (
     1,
     "root@localhost",
     "root"
-)
+);
 
+INSERT INTO providers (
+    id,
+    name
+) VALUES (
+    1,
+    "Domino's pizza"
+);

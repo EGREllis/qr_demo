@@ -3,14 +3,8 @@ package uk.co.hermes.dao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
-import uk.co.hermes.dao.mapper.AccountRowMapper;
-import uk.co.hermes.dao.mapper.IntegerRowMapper;
-import uk.co.hermes.dao.mapper.OfferRowMapper;
-import uk.co.hermes.dao.mapper.PurchaseRowMapper;
-import uk.co.hermes.domain.Account;
-import uk.co.hermes.domain.Identifiable;
-import uk.co.hermes.domain.Offer;
-import uk.co.hermes.domain.Purchase;
+import uk.co.hermes.dao.mapper.*;
+import uk.co.hermes.domain.*;
 
 import java.util.HashMap;
 import java.util.List;
@@ -92,5 +86,10 @@ public class DatabaseDao {
     public List<Purchase> allPurchases() {
         String select = "SELECT id, account_id, offer_id, refund_id, refunded_by_id FROM purchases";
         return template.query(select, new PurchaseRowMapper());
+    }
+
+    public List<Provider> allProviders() {
+        String select = "SELECT id, name FROM providers";
+        return template.query(select, new ProviderRowMapper());
     }
 }
