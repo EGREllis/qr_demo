@@ -21,7 +21,7 @@ CREATE TABLE purchases (
     id INT PRIMARY KEY,
     account_id INT,
     offer_id INT,
-    refunds_id INT,
+    refund_id INT,
     refunded_by_id INT
 );
 

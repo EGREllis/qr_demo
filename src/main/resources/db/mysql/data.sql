@@ -19,3 +19,4 @@ INSERT INTO accounts (
     "root@localhost",
     "root"
 )
+

@@ -6,9 +6,11 @@ import org.springframework.stereotype.Component;
 import uk.co.hermes.dao.mapper.AccountRowMapper;
 import uk.co.hermes.dao.mapper.IntegerRowMapper;
 import uk.co.hermes.dao.mapper.OfferRowMapper;
+import uk.co.hermes.dao.mapper.PurchaseRowMapper;
 import uk.co.hermes.domain.Account;
 import uk.co.hermes.domain.Identifiable;
 import uk.co.hermes.domain.Offer;
+import uk.co.hermes.domain.Purchase;
 
 import java.util.HashMap;
 import java.util.List;
@@ -85,5 +87,10 @@ public class DatabaseDao {
             throw new IllegalStateException(String.format("Could not find a record in the offer table with id %1$d", id));
         }
         return results.get(0);
+    }
+
+    public List<Purchase> allPurchases() {
+        String select = "SELECT id, account_id, offer_id, refund_id, refunded_by_id FROM purchases";
+        return template.query(select, new PurchaseRowMapper());
     }
 }

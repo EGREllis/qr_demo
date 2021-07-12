@@ -12,8 +12,8 @@ public class PurchaseRowMapper implements RowMapper<Purchase> {
         final int id = resultSet.getInt("id");
         final int accountId = resultSet.getInt("account_id");
         final int offerId = resultSet.getInt("offer_id");
-        final int refundId = resultSet.getInt("refund_id");
-        final int refundedById = resultSet.getInt("refunded_by_id");
+        final Integer refundId = resultSet.getInt("refund_id");
+        final Integer refundedById = resultSet.getInt("refunded_by_id");
         return new Purchase(id, accountId, offerId, refundId, refundedById);
     }
 }

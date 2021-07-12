@@ -4,10 +4,10 @@ public class Purchase implements Identifiable {
     private final int id;
     private final int accountId;
     private final int offerId;
-    private final int refundId;
-    private final int refundedById;
+    private final Integer refundId;
+    private final Integer refundedById;
 
-    public Purchase(int id, int accountId, int offerId, int refundId, int refundedById) {
+    public Purchase(int id, int accountId, int offerId, Integer refundId, Integer refundedById) {
         this.id = id;
         this.accountId = accountId;
         this.offerId = offerId;
@@ -27,11 +27,11 @@ public class Purchase implements Identifiable {
         return offerId;
     }
 
-    public int getRefundId() {
+    public Integer getRefundId() {
         return refundId;
     }
 
-    public int getRefundedById() {
+    public Integer getRefundedById() {
         return refundedById;
     }
 }
