@@ -92,4 +92,9 @@ public class DatabaseDao {
         String select = "SELECT id, name FROM providers";
         return template.query(select, new ProviderRowMapper());
     }
+
+    public List<Order> allOrders() {
+        String select = "SELECT account_id, provider_id, offer_id, quantity FROM orders";
+        return template.query(select, new OrderRowMapper());
+    }
 }

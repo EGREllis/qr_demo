@@ -3,7 +3,7 @@ DROP TABLE IF EXISTS offers;
 DROP TABLE IF EXISTS accounts;
 DROP TABLE IF EXISTS purchases;
 DROP TABLE IF EXISTS providers;
-DROP TABLE IF EXISTS carts;
+DROP TABLE IF EXISTS orders;
 
 -- Tables
 CREATE TABLE offers (
@@ -32,7 +32,7 @@ CREATE TABLE providers (
     name VARCHAR(30)
 );
 
-CREATE TABLE carts (
+CREATE TABLE orders (
     account_id INT,
     provider_id INT,
     offer_id INT,
