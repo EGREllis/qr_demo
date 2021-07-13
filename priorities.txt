@@ -2,6 +2,8 @@
 [DONE 2021/07/12]   Offers and purchases can be listed
 [DONE 2021/07/12]   Providers can be listed
 [DONE 2021/07/12]   Offers can be listed
+[DONE 2021/07/13]   Sign in uses cookies, both on successful sign in and on index
+
 
 Scan QR Code of product -> URL  -> Sign up (if not registered, alternatively renew cookie/confirm below)
                                 -> Purchase confirmation screen  -> Purchase                         -> Payment
