@@ -4,6 +4,7 @@
 [DONE 2021/07/12]   Offers can be listed
 [DONE 2021/07/13]   Sign in uses cookies, both on successful sign in and on index
 [DONE 2021/07/13]   QR Codes accessible via HTTP: http://localhost:8080/qr/offer?id=1
+[DONE 2021/07/13]   Removed debugging controllers, consolidated sign_in controller, removed debugging template
 []
 
 Scan QR Code of product -> URL  -> Sign up (if not registered, alternatively renew cookie/confirm below)
