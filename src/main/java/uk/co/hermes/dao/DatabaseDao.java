@@ -70,7 +70,12 @@ public class DatabaseDao {
     }
 
     public List<Offer> allOffers() {
-        String select = "SELECT id, product, price, currency FROM offers";
+        String select = "SELECT id, provider_id, product, price, currency FROM offers";
+        return template.query(select, new OfferRowMapper());
+    }
+
+    public List<Offer> getOffersForProvider(int providerId) {
+        String select = String.format("SELECT id, provider_id, product, price, currency FROM offers WHERE provider_id = %1$d", providerId);
         return template.query(select, new OfferRowMapper());
     }
 
@@ -89,7 +94,7 @@ public class DatabaseDao {
     }
 
     public List<Provider> allProviders() {
-        String select = "SELECT id, name FROM providers";
+        String select = "SELECT id, name, prefix FROM providers";
         return template.query(select, new ProviderRowMapper());
     }
 

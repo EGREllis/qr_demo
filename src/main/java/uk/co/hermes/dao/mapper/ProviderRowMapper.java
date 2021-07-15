@@ -11,6 +11,7 @@ public class ProviderRowMapper implements RowMapper<Provider> {
     public Provider mapRow(ResultSet resultSet, int i) throws SQLException {
         int id = resultSet.getInt("id");
         String name = resultSet.getString("name");
-        return new Provider(id, name);
+        String prefix = resultSet.getString("prefix");
+        return new Provider(id, name, prefix);
     }
 }

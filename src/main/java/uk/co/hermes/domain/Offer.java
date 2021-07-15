@@ -2,14 +2,16 @@ package uk.co.hermes.domain;
 
 import java.math.BigDecimal;
 
-public class Offer {
+public class Offer implements Identifiable {
     private final int id;
+    private final int providerId;
     private final String product;
     private final BigDecimal price;
     private final String currency;
 
-    public Offer(int id, String product, BigDecimal price, String currency) {
+    public Offer(int id, int providerId, String product, BigDecimal price, String currency) {
         this.id = id;
+        this.providerId = providerId;
         this.product = product;
         this.price = price;
         this.currency = currency;
@@ -17,6 +19,10 @@ public class Offer {
 
     public int getId() {
         return id;
+    }
+
+    public int getProviderId() {
+        return providerId;
     }
 
     public String getProduct() {
