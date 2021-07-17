@@ -117,17 +117,19 @@
 						if (index == 0 && i == 0) {
 							// Boundary change from no-element to element
 						} else {
-							result[index++] = { count: nCount, name: name, image: image, qr: qr };
+							result[index++] = { count: nCount, name: name, image: image, qr: qr, options: option };
 						}
 						name = pizza.name;
 						nCount = 0;
 						image = pizza.image;
 						qr = pizza.qr;
+						option = '<option value="'+pizza.id+'">'+pizza.option+'</option>';
 					} else {
+						option += '<option value="'+pizza.id+'">'+pizza.option+'</option>';
 						++nCount;
 					}
 				}
-				result[index++] = { count: nCount, name: name, image: image, qr: qr };
+				result[index++] = { count: nCount, name: name, image: image, qr: qr, options: option };
 
 				alert("Pizzas "+pizzaList.length+" Slides "+result.length);
 				return result;
@@ -138,7 +140,16 @@
 				card += '<img class="card-top-img" src="'+slide.image+'" />';
 				card += '<div class="card-body">';
 	
-				card += '<h5 class="card-title">'+slide.name+'</h5>';
+			//	card += '<h5 class="card-title">'+slide.name+'</h5>';
+			//	card += '<select class="card-text">'+slide.options+'</select>';
+			//	card += '<button class="btn btn-primary btn-block">Buy Pizza</button>';
+
+				alert('http://localhost:8080/'+slide.qr);
+				card += '<table border="0">';
+				card += '<tr><td><h5 class="card-title">'+slide.name+'</h5></td><td rowspan="3"><img src="http://localhost:8080/'+slide.qr+'" /></td></tr>';
+				card += '<tr><td><select class="card-text">'+slide.options+'</select></td></tr>';
+				card += '<tr><td><button class="btn btn-primary btn-block">Buy Pizza</button></td></tr>';
+				card += '</table>';
 
 				card += '</div>';
 				card += '</div>';
