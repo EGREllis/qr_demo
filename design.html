@@ -1,0 +1,169 @@
+<html>
+	<head>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+		<script>
+			var pizzas = [
+					{	name: 	"Meatball Marianara",
+						image:	"dominos/images/pizza/speciality/MeatballMarinara.jpeg",
+						id:	1,
+						qr:	"qr/offer?id=1",
+						option:	"Personal £7.99"
+					},
+					{	name:   "Meatball Marianara",
+                                               	image:  "dominos/images/pizza/speciality/MeatballMarinara.jpeg",
+						id:	2,
+                                               	qr:     "qr/offer?id=2",
+                                                option: "Small £14.99"
+					},
+					{       name:   "Meatball Marianara",
+                                                image:  "dominos/images/pizza/speciality/MeatballMarinara.jpeg",
+						id:	3,
+                                              	qr:     "qr/offer?id=3",
+                                               	option: "Medium £18.99"
+                                        },
+					{       name:   "Meatball Marianara",
+                                                image:  "dominos/images/pizza/speciality/MeatballMarinara.jpeg",
+						id:	4,
+                                      	        qr:     "qr/offer?id=4",
+                                       	        option: "Large £21.99"
+                                        },
+					{       name:   "Cheeseburger",
+                                         	image:  "dominos/images/pizza/speciality/CheeseburgerPizza.jpeg",
+                                                id:     5,
+                                                qr:     "qr/offer?id=5",
+                                                option: "Personal £7.99"
+                                        },
+					{       name:   "Cheeseburger",
+                                                image:  "dominos/images/pizza/speciality/CheeseburgerPizza.jpeg",
+                                                id:     6,
+                                                qr:     "qr/offer?id=6",
+                                                option: "Small £14.99"
+                                        },
+					{       name:   "Cheeseburger",
+                                                image:  "dominos/images/pizza/speciality/CheeseburgerPizza.jpeg",
+                                                id:     7,
+                                                qr:     "qr/offer?id=7",
+                                                option: "Medium £18.99"
+                                        },
+					{       name:   "Cheeseburger",
+                                                image:  "dominos/images/pizza/speciality/CheeseburgerPizza.jpeg",
+                                                id:     8,
+                                                qr:     "qr/offer?id=8",
+                                                option: "Large £21.99"
+                                        },
+					{       name:   "Cheese and Tomato",
+                                                image:  "dominos/images/pizza/speciality/CheeseTomato.jpeg",
+                                                id:     9,
+                                                qr:     "qr/offer?id=9",
+                                                option: "Personal £5.49"
+                                        },
+					{       name:   "Cheese and Tomato",
+                                                image:  "dominos/images/pizza/speciality/CheeseTomato.jpeg",
+                                                id:     10,
+                                                qr:     "qr/offer?id=10",
+                                                option: "Small £10.99"
+                                        },
+					{       name:   "Cheese and Tomato",
+                                                image:  "dominos/images/pizza/speciality/CheeseTomato.jpeg",
+                                                id:     11,
+                                                qr:     "qr/offer?id=11",
+                                                option: "Medium £12.99"
+                                        },
+					{       name:   "Cheese and Tomato",
+                                                image:  "dominos/images/pizza/speciality/CheeseTomato.jpeg",
+                                                id:     12,
+                                                qr:     "qr/offer?id=12",
+                                                option: "Large $14.99"
+                                        },
+					{       name:   "Mighty Meaty",
+                                                image:  "dominos/images/pizza/speciality/MightyMeaty.jpeg",
+                                                id:     13,
+                                                qr:     "qr/offer?id=13",
+                                                option: "Personal £7.99"
+                                        },
+					{       name:   "Mighty Meaty",
+                                                image:  "dominos/images/pizza/speciality/MightyMeaty.jpeg",
+                                                id:     14,
+                                                qr:     "qr/offer?id=13",
+                                                option: "Small £14.99"
+                                        },
+					{       name:   "Mighty Meaty",
+                                                image:  "dominos/images/pizza/speciality/MightyMeaty.jpeg",
+                                                id:     15,
+                                                qr:     "qr/offer?id=13",
+                                                option: "Medium £18.99"
+                                        },
+					{       name:   "Mighty Meaty",
+                                                image:  "dominos/images/pizza/speciality/MightyMeaty.jpeg",
+                                                id:     16,
+                                                qr:     "qr/offer?id=13",
+               	                                option: "Large £21.99"
+                                        }
+				];
+
+			function convertPizzaToSlides(pizzaList) {
+				var result = [];
+				var index = 0;
+				var name = "";
+				var nCount = 0;
+				var image = "";
+				for (var i = 0; i < pizzaList.length; i++) {
+					var pizza = pizzaList[i];
+					if (name != pizza.name) {
+						if (index == 0 && i == 0) {
+							// Boundary change from no-element to element
+						} else {
+							result[index++] = { count: nCount, name: name, image: image, qr: qr };
+						}
+						name = pizza.name;
+						nCount = 0;
+						image = pizza.image;
+						qr = pizza.qr;
+					} else {
+						++nCount;
+					}
+				}
+				result[index++] = { count: nCount, name: name, image: image, qr: qr };
+
+				alert("Pizzas "+pizzaList.length+" Slides "+result.length);
+				return result;
+			}
+
+			function drawSlide(slide) {
+				var card = '<div class="card col-md-4">';
+				card += '<img class="card-top-img" src="'+slide.image+'" />';
+				card += '<div class="card-body">';
+	
+				card += '<h5 class="card-title">'+slide.name+'</h5>';
+
+				card += '</div>';
+				card += '</div>';
+				//return "<div class='col-md-4'>"+slide.name+"</div>\n";
+				return card;
+			}
+
+			function drawSlides() {
+				alert("drawSlides");
+				var ele = document.getElementById('pizzas');
+				var html = "<div class='row'>\n";
+				for (var i = 0; i < slides.length; i++) {
+					html += drawSlide(slides[i]);
+				}
+				html += "</div>\n";
+				alert(html);
+				ele.innerHTML = html;
+			}
+
+			var slides = convertPizzaToSlides(pizzas);
+
+		</script>
+	</head>
+	<body onload="drawSlides()">
+		<div class="container" id="pizzas">
+		</div>	
+	</body>
+</html>
