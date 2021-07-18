@@ -140,20 +140,15 @@
 				card += '<img class="card-top-img" src="'+slide.image+'" />';
 				card += '<div class="card-body">';
 	
-			//	card += '<h5 class="card-title">'+slide.name+'</h5>';
-			//	card += '<select class="card-text">'+slide.options+'</select>';
-			//	card += '<button class="btn btn-primary btn-block">Buy Pizza</button>';
-
-				alert('http://localhost:8080/'+slide.qr);
 				card += '<table border="0">';
 				card += '<tr><td><h5 class="card-title">'+slide.name+'</h5></td><td rowspan="3"><img src="http://localhost:8080/'+slide.qr+'" /></td></tr>';
-				card += '<tr><td><select class="card-text">'+slide.options+'</select></td></tr>';
+				card += '<tr><td><select onchange="alert(1)" class="card-text">'+slide.options+'</select></td></tr>';
 				card += '<tr><td><button class="btn btn-primary btn-block">Buy Pizza</button></td></tr>';
 				card += '</table>';
 
 				card += '</div>';
 				card += '</div>';
-				//return "<div class='col-md-4'>"+slide.name+"</div>\n";
+
 				return card;
 			}
 
